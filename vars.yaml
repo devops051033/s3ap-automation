@@ -1,0 +1,8 @@
+---
+bucket: test-bucket-1033
+account_id: 297970786065
+ap_name: demo-ap-new-2
+role_arn: arn:aws:iam::476533878911:user/hx-visible-alpha,arn:aws:iam::297970786065:user/iamadmin,arn:aws:iam::297970786065:user/shahedmehbub
+iam_user: s3-accessPoint-testUser
+directory: dir2
+# arn:aws:iam::349383154381:user/ap-test-ansible-2

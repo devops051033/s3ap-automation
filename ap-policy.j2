@@ -1,0 +1,37 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "Statement1",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": [
+                    "arn:aws:iam::958923217481:user/ap-testUser1"
+                ]
+            },
+            "Action": "s3:ListBucket",
+            "Resource": "arn:aws:s3:us-east-1:{{ account_id }}:accesspoint/{{ ap_name }}",
+            "Condition": {
+                "StringEquals": {
+                    "s3:prefix": "{{ directory }}/"
+                }
+            }
+        },
+        {
+            "Sid": "Statement2",
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": [
+                    "arn:aws:iam::958923217481:user/ap-testUser1"
+                ]
+            },
+            "Action": [
+                "s3:GetObject",
+                "s3:GetObjectAcl",
+                "s3:GetObjectTagging",
+                "s3:GetObjectVersion"
+            ],
+            "Resource": "arn:aws:s3:us-east-1:{{ account_id }}:accesspoint/{{ ap_name }}/object/{{ directory }}/*"
+        }
+    ]
+}
